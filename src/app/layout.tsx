@@ -2,6 +2,17 @@ import type { Metadata } from "next";
 import { Architects_Daughter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from '@vercel/analytics/react';
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <Analytics /> {/* <-- Add this line */}
+      </body>
+    </html>
+  );
+}
 
 const architectsDaughter = Architects_Daughter({
   variable: "--font-architects",
@@ -31,9 +42,6 @@ export const metadata: Metadata = {
     "Bangladesh",
   ],
   authors: [{ name: "Md. Farhad Hossain Ovi" }],
-  icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
-  },
   openGraph: {
     title: "Md. Farhad Hossain Ovi — Blueprint Portfolio",
     description:
