@@ -43,72 +43,73 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* ===== Blueprint Design Tokens ===== */
-  --color-bp-blue: #003366;
-  --color-bp-blue-deep: #002a52;
-  --color-bp-line: rgba(255, 255, 255, 0.8);
-  --color-bp-line-dim: rgba(255, 255, 255, 0.35);
+  /* ===== Monochrome Blueprint Tokens ===== */
+  /* White ink on near-black — the cyanotype negative, stripped of color. */
+  --color-bp-blue: #0a0a0a;
+  --color-bp-blue-deep: #141414;
+  --color-bp-line: rgba(255, 255, 255, 0.85);
+  --color-bp-line-dim: rgba(255, 255, 255, 0.45);
   --color-bp-line-faint: rgba(255, 255, 255, 0.15);
-  --color-bp-redline: #ff3333;
-  --color-bp-cyan: #00ffff;
-  --color-bp-paper: #cce0f5;
+  --color-bp-redline: #ffffff;
+  --color-bp-cyan: #ffffff;
+  --color-bp-paper: #1c1c1c;
 }
 
 :root {
   --radius: 0rem;
-  /* Force the blueprint palette everywhere */
-  --background: #003366;
+  /* Force the monochrome blueprint palette everywhere */
+  --background: #0a0a0a;
   --foreground: rgba(255, 255, 255, 0.9);
-  --card: #002a52;
+  --card: #141414;
   --card-foreground: rgba(255, 255, 255, 0.9);
-  --popover: #002a52;
+  --popover: #141414;
   --popover-foreground: rgba(255, 255, 255, 0.9);
-  --primary: #00ffff;
-  --primary-foreground: #003366;
-  --secondary: #003366;
+  --primary: #ffffff;
+  --primary-foreground: #0a0a0a;
+  --secondary: #0a0a0a;
   --secondary-foreground: rgba(255, 255, 255, 0.9);
   --muted: rgba(255, 255, 255, 0.08);
   --muted-foreground: rgba(255, 255, 255, 0.55);
-  --accent: #ff3333;
-  --accent-foreground: #ffffff;
-  --destructive: #ff3333;
-  --border: rgba(255, 255, 255, 0.8);
+  --accent: #ffffff;
+  --accent-foreground: #0a0a0a;
+  --destructive: #ffffff;
+  --border: rgba(255, 255, 255, 0.85);
   --input: rgba(255, 255, 255, 0.2);
-  --ring: #00ffff;
-  --chart-1: #00ffff;
-  --chart-2: #ff3333;
-  --chart-3: #ffffff;
-  --chart-4: #67c5ff;
-  --chart-5: #ff9966;
-  --sidebar: #002a52;
+  --ring: #ffffff;
+  --chart-1: #ffffff;
+  --chart-2: #bdbdbd;
+  --chart-3: #8a8a8a;
+  --chart-4: #d8d8d8;
+  --chart-5: #6e6e6e;
+  --sidebar: #141414;
   --sidebar-foreground: rgba(255, 255, 255, 0.9);
-  --sidebar-primary: #00ffff;
-  --sidebar-primary-foreground: #003366;
+  --sidebar-primary: #ffffff;
+  --sidebar-primary-foreground: #0a0a0a;
   --sidebar-accent: rgba(255, 255, 255, 0.08);
   --sidebar-accent-foreground: rgba(255, 255, 255, 0.9);
-  --sidebar-border: rgba(255, 255, 255, 0.8);
-  --sidebar-ring: #00ffff;
+  --sidebar-border: rgba(255, 255, 255, 0.85);
+  --sidebar-ring: #ffffff;
 }
 
 .dark {
-  --background: #003366;
+  --background: #0a0a0a;
   --foreground: rgba(255, 255, 255, 0.9);
-  --card: #002a52;
+  --card: #141414;
   --card-foreground: rgba(255, 255, 255, 0.9);
-  --popover: #002a52;
+  --popover: #141414;
   --popover-foreground: rgba(255, 255, 255, 0.9);
-  --primary: #00ffff;
-  --primary-foreground: #003366;
-  --secondary: #003366;
+  --primary: #ffffff;
+  --primary-foreground: #0a0a0a;
+  --secondary: #0a0a0a;
   --secondary-foreground: rgba(255, 255, 255, 0.9);
   --muted: rgba(255, 255, 255, 0.08);
   --muted-foreground: rgba(255, 255, 255, 0.55);
-  --accent: #ff3333;
-  --accent-foreground: #ffffff;
-  --destructive: #ff3333;
-  --border: rgba(255, 255, 255, 0.8);
+  --accent: #ffffff;
+  --accent-foreground: #0a0a0a;
+  --destructive: #ffffff;
+  --border: rgba(255, 255, 255, 0.85);
   --input: rgba(255, 255, 255, 0.2);
-  --ring: #00ffff;
+  --ring: #ffffff;
 }
 
 @layer base {
@@ -120,13 +121,13 @@
     background-color: var(--color-bp-blue);
     color: var(--color-bp-line);
     font-family: var(--font-mono-tech), "Roboto Mono", monospace;
-    /* Master grid: 20px squares, the foundation of every element */
+    /* Master grid: 20px squares — white hairlines on ink black */
     background-image:
       linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-      /* subtle vellum/paper grain via radial noise */
-      radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.04) 0%, transparent 40%),
-      radial-gradient(circle at 80% 70%, rgba(255, 51, 51, 0.03) 0%, transparent 40%);
+      /* subtle paper grain via faint white radial */
+      radial-gradient(circle at 18% 28%, rgba(255, 255, 255, 0.035) 0%, transparent 42%),
+      radial-gradient(circle at 82% 72%, rgba(255, 255, 255, 0.025) 0%, transparent 42%);
     background-size:
       20px 20px,
       20px 20px,
@@ -164,31 +165,31 @@
     color: rgba(255, 255, 255, 0.3);
   }
   .bp-cyan {
-    color: #00ffff;
+    color: #ffffff;
   }
   .bp-red {
-    color: #ff3333;
+    color: #ffffff;
   }
   .bp-bg-blue {
-    background-color: #003366;
+    background-color: #0a0a0a;
   }
   .bp-bg-deep {
-    background-color: #002a52;
+    background-color: #141414;
   }
   .bp-border-line {
-    border-color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.85);
   }
   .bp-border-dim {
-    border-color: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.45);
   }
   .bp-border-faint {
     border-color: rgba(255, 255, 255, 0.15);
   }
   .bp-border-cyan {
-    border-color: #00ffff;
+    border-color: #ffffff;
   }
   .bp-border-red {
-    border-color: #ff3333;
+    border-color: #ffffff;
   }
   .bp-font-architects {
     font-family: var(--font-architects), "Architects Daughter", cursive;
@@ -197,13 +198,13 @@
     font-family: var(--font-mono-tech), "Roboto Mono", monospace;
   }
   .bp-stroke-line {
-    stroke: rgba(255, 255, 255, 0.8);
+    stroke: rgba(255, 255, 255, 0.85);
   }
   .bp-stroke-cyan {
-    stroke: #00ffff;
+    stroke: #ffffff;
   }
   .bp-stroke-red {
-    stroke: #ff3333;
+    stroke: #ffffff;
   }
 }
 
@@ -250,10 +251,10 @@
 @keyframes bp-pulse-red {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(255, 51, 51, 0.5);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55);
   }
   50% {
-    box-shadow: 0 0 0 6px rgba(255, 51, 51, 0);
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
   }
 }
 
@@ -282,7 +283,7 @@
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #002a52;
+  background: #0a0a0a;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
@@ -293,10 +294,10 @@
   border: 1px solid rgba(255, 255, 255, 0.8);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 ::selection {
-  background: #ff3333;
-  color: #ffffff;
+  background: #ffffff;
+  color: #0a0a0a;
 }

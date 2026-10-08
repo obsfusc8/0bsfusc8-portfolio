@@ -21,7 +21,7 @@ export function BlueprintCard({
 } & Omit<React.HTMLAttributes<HTMLDivElement>, "children">) {
   return (
     <div
-      className={`relative border border-[rgba(255,255,255,0.8)] bg-[rgba(0,42,82,0.55)] backdrop-blur-[1px] bp-fade-up ${className ?? ""}`}
+      className={`relative border border-[rgba(255,255,255,0.8)] bg-[rgba(255,255,255,0.03)] backdrop-blur-[1px] bp-fade-up ${className ?? ""}`}
       style={{ animationDelay: "0.1s" }}
       {...props}
     >
@@ -33,13 +33,13 @@ export function BlueprintCard({
 
       {/* Top-left coordinate tag */}
       {coords && (
-        <div className="absolute -top-[18px] left-3 z-10 bg-[#003366] px-1.5 text-[10px] leading-none tracking-widest bp-text-faint bp-font-mono">
+        <div className="absolute -top-[18px] left-3 z-10 bg-[#0a0a0a] px-1.5 text-[10px] leading-none tracking-widest bp-text-faint bp-font-mono">
           {coords}
         </div>
       )}
       {/* Top-right serial tag */}
       {serial && (
-        <div className="absolute -top-[18px] right-3 z-10 bg-[#003366] px-1.5 text-[10px] leading-none tracking-widest bp-text-dim bp-font-mono">
+        <div className="absolute -top-[18px] right-3 z-10 bg-[#0a0a0a] px-1.5 text-[10px] leading-none tracking-widest bp-text-dim bp-font-mono">
           {serial}
         </div>
       )}
@@ -85,7 +85,7 @@ export function DimensionLine({
         </svg>
         <div className="flex-1 w-px bg-[rgba(255,255,255,0.8)]" />
         {label && (
-          <span className="absolute left-2 top-1/2 -translate-y-1/2 whitespace-nowrap bg-[#003366] px-1 text-[10px] tracking-widest bp-text-dim bp-font-mono">
+          <span className="absolute left-2 top-1/2 -translate-y-1/2 whitespace-nowrap bg-[#0a0a0a] px-1 text-[10px] tracking-widest bp-text-dim bp-font-mono">
             {label}
           </span>
         )}
@@ -103,7 +103,7 @@ export function DimensionLine({
       </svg>
       <div className="h-px flex-1 bg-[rgba(255,255,255,0.8)]" />
       {label && (
-        <span className="mx-2 whitespace-nowrap bg-[#003366] px-1.5 text-[10px] tracking-widest bp-text-dim bp-font-mono">
+        <span className="mx-2 whitespace-nowrap bg-[#0a0a0a] px-1.5 text-[10px] tracking-widest bp-text-dim bp-font-mono">
           {label}
         </span>
       )}
@@ -128,7 +128,7 @@ export function CoordinateLabel({
 }) {
   return (
     <span
-      className={`inline-flex items-center gap-1 bg-[#003366] px-1 text-[10px] tracking-widest bp-cyan bp-font-mono ${className ?? ""}`}
+      className={`inline-flex items-center gap-1 bg-[#0a0a0a] px-1 text-[10px] tracking-widest bp-cyan bp-font-mono ${className ?? ""}`}
     >
       x:{x},y:{y}
     </span>
@@ -157,11 +157,11 @@ export function RedlineNote({
         <path
           d="M2 22 C 10 18, 20 10, 30 4"
           fill="none"
-          stroke="#ff3333"
+          stroke="#ffffff"
           strokeWidth="1.4"
           strokeDasharray="3 3"
         />
-        <path d="M30 4 L 26 6 M30 4 L 30 9" stroke="#ff3333" strokeWidth="1.4" fill="none" />
+        <path d="M30 4 L 26 6 M30 4 L 30 9" stroke="#ffffff" strokeWidth="1.4" fill="none" />
       </svg>
       <span className="italic">{children}</span>
     </div>
@@ -215,11 +215,15 @@ export function TechnicalStamp({
   className?: string;
   accent?: "line" | "cyan" | "red";
 }) {
+  // Monochrome: three structural treatments keep hierarchy without color.
+  //  line  → outline + white text (default)
+  //  cyan  → faint white fill + white text (data tag)
+  //  red   → solid white fill + black text (inverted "approved" stamp)
   const color =
     accent === "cyan"
-      ? "bp-border-cyan bp-cyan"
+      ? "bp-border-cyan bp-cyan bg-white/10"
       : accent === "red"
-        ? "bp-border-red bp-red"
+        ? "bp-border-red bg-white text-black"
         : "bp-border-line bp-text-line";
   return (
     <span

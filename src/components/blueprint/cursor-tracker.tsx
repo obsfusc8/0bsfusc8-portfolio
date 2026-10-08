@@ -49,17 +49,17 @@ export function CursorTracker() {
       aria-hidden
     >
       {/* vertical line spanning viewport at cursor X */}
-      <span className="fixed left-0 top-0 h-screen w-px -translate-x-1/2 bg-[rgba(0,255,255,0.18)]" style={{ left: pos.x }} />
+      <span className="fixed left-0 top-0 h-screen w-px -translate-x-1/2 bg-[rgba(255,255,255,0.18)]" style={{ left: pos.x }} />
       {/* horizontal line spanning viewport at cursor Y */}
-      <span className="fixed left-0 top-0 w-screen h-px -translate-y-1/2 bg-[rgba(0,255,255,0.18)]" style={{ top: pos.y }} />
+      <span className="fixed left-0 top-0 w-screen h-px -translate-y-1/2 bg-[rgba(255,255,255,0.18)]" style={{ top: pos.y }} />
       {/* center crosshair */}
       <span className="absolute left-1/2 top-1/2 block h-6 w-6 -translate-x-1/2 -translate-y-1/2">
-        <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[#00ffff]" />
-        <span className="absolute top-1/2 left-0 h-px w-full -translate-y-1/2 bg-[#00ffff]" />
-        <span className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff3333]" />
+        <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white" />
+        <span className="absolute top-1/2 left-0 h-px w-full -translate-y-1/2 bg-white" />
+        <span className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white bg-[#0a0a0a]" />
       </span>
       {/* coordinate label */}
-      <span className="absolute left-5 top-5 whitespace-nowrap bg-[#003366] px-1.5 py-0.5 text-[10px] tracking-widest bp-cyan bp-font-mono">
+      <span className="absolute left-5 top-5 whitespace-nowrap bg-[#0a0a0a] px-1.5 py-0.5 text-[10px] tracking-widest bp-cyan bp-font-mono">
         x:{pos.x},y:{pos.y}
       </span>
     </div>

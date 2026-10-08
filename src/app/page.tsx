@@ -150,7 +150,7 @@ function ScanLine() {
   return (
     <div className="pointer-events-none fixed inset-0 z-[55] overflow-hidden" aria-hidden>
       <div
-        className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-[#00ffff]/30 to-transparent"
+        className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-[#ffffff]/30 to-transparent"
         style={{ animation: "bp-scan 9s linear infinite" }}
       />
     </div>
@@ -169,7 +169,7 @@ function Nav() {
     { href: "#contact", label: "CONTACT" },
   ];
   return (
-    <header className="sticky top-0 z-40 border-b border-[rgba(255,255,255,0.8)] bg-[#003366]/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b border-[rgba(255,255,255,0.8)] bg-[#0a0a0a]/95 backdrop-blur-sm">
       {/* top dimension strip */}
       <div className="border-b border-[rgba(255,255,255,0.2)] bp-font-mono text-[10px] tracking-widest bp-text-faint">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-1">
@@ -180,7 +180,7 @@ function Nav() {
       </div>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
         <a href="#top" className="group flex items-center gap-2.5">
-          <Crosshair className="h-5 w-5 text-[#00ffff]" strokeWidth={1.4} />
+          <Crosshair className="h-5 w-5 text-[#ffffff]" strokeWidth={1.4} />
           <span className="bp-font-mono text-sm font-bold uppercase tracking-[0.2em] bp-text-line">
             M.F.H. OVI
           </span>
@@ -193,7 +193,7 @@ function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className="border border-transparent px-2.5 py-1 bp-text-dim transition-colors hover:border-[rgba(255,255,255,0.8)] hover:bg-[rgba(0,255,255,0.08)] hover:text-[#00ffff]"
+              className="border border-transparent px-2.5 py-1 bp-text-dim transition-colors hover:border-[rgba(255,255,255,0.8)] hover:bg-[rgba(255,255,255,0.08)] hover:text-[#ffffff]"
             >
               {l.label}
             </a>
@@ -203,7 +203,7 @@ function Nav() {
           href={PROFILE.github}
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-1.5 border border-[rgba(255,255,255,0.8)] px-2.5 py-1 bp-font-mono text-[11px] tracking-widest bp-text-line transition-colors hover:bg-[#00ffff] hover:text-[#003366]"
+          className="flex items-center gap-1.5 border border-[rgba(255,255,255,0.8)] px-2.5 py-1 bp-font-mono text-[11px] tracking-widest bp-text-line transition-colors hover:bg-[#ffffff] hover:text-[#0a0a0a]"
         >
           <Github className="h-3.5 w-3.5" strokeWidth={1.6} />
           <span className="hidden sm:inline">SOURCE</span>
@@ -247,7 +247,7 @@ function Hero() {
 
           {/* role underline */}
           <div className="mt-4 flex items-center gap-3">
-            <div className="h-px w-8 bg-[#ff3333]" />
+            <div className="h-px w-8 bg-[#ffffff]" />
             <p className="bp-font-mono text-[11px] tracking-[0.28em] bp-red sm:text-xs">
               {PROFILE.role}
             </p>
@@ -261,14 +261,14 @@ function Hero() {
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
               href="#works"
-              className="group flex items-center gap-2 border border-[#ff3333] bg-[#ff3333]/10 px-4 py-2.5 bp-font-mono text-xs font-bold uppercase tracking-widest bp-red transition-colors hover:bg-[#ff3333] hover:text-white"
+              className="group flex items-center gap-2 border border-white bg-white/10 px-4 py-2.5 bp-font-mono text-xs font-bold uppercase tracking-widest bp-red transition-colors hover:bg-white hover:text-black"
             >
               <span>View Works</span>
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" strokeWidth={2} />
             </a>
             <a
               href={`mailto:${PROFILE.email}`}
-              className="flex items-center gap-2 border border-[rgba(255,255,255,0.8)] px-4 py-2.5 bp-font-mono text-xs font-bold uppercase tracking-widest bp-text-line transition-colors hover:bg-[#00ffff] hover:text-[#003366]"
+              className="flex items-center gap-2 border border-[rgba(255,255,255,0.8)] px-4 py-2.5 bp-font-mono text-xs font-bold uppercase tracking-widest bp-text-line transition-colors hover:bg-[#ffffff] hover:text-[#0a0a0a]"
             >
               <Mail className="h-3.5 w-3.5" strokeWidth={1.8} />
               <span>Contact</span>
@@ -328,9 +328,9 @@ function RegisterMark({ className }: { className?: string }) {
       className={`pointer-events-none absolute z-20 block h-5 w-5 ${className ?? ""}`}
       aria-hidden
     >
-      <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[#00ffff]/60" />
-      <span className="absolute top-1/2 left-0 h-px w-full -translate-y-1/2 bg-[#00ffff]/60" />
-      <span className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#00ffff]" />
+      <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[#ffffff]/60" />
+      <span className="absolute top-1/2 left-0 h-px w-full -translate-y-1/2 bg-[#ffffff]/60" />
+      <span className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ffffff]" />
     </span>
   );
 }
@@ -351,7 +351,7 @@ function About() {
         {/* Bio block */}
         <BlueprintCard coords="x:000,y:000" serial="BIO-01" className="lg:col-span-7 p-5 sm:p-6">
           <div className="mb-4 flex items-center gap-2">
-            <GraduationCap className="h-4 w-4 text-[#00ffff]" strokeWidth={1.6} />
+            <GraduationCap className="h-4 w-4 text-[#ffffff]" strokeWidth={1.6} />
             <h3 className="bp-font-mono text-xs font-bold uppercase tracking-widest bp-text-line">
               Education
             </h3>
@@ -381,7 +381,7 @@ function About() {
         <div id="stack" className="lg:col-span-5">
           <BlueprintCard coords="x:580,y:000" serial="STK-01" className="h-full p-5 sm:p-6">
             <div className="mb-4 flex items-center gap-2">
-              <Code2 className="h-4 w-4 text-[#00ffff]" strokeWidth={1.6} />
+              <Code2 className="h-4 w-4 text-[#ffffff]" strokeWidth={1.6} />
               <h3 className="bp-font-mono text-xs font-bold uppercase tracking-widest bp-text-line">
                 Technical Stack
               </h3>
@@ -421,7 +421,7 @@ function StackRow({
   return (
     <div className="mb-4">
       <div className="mb-2 flex items-center gap-2 bp-font-mono text-[10px] tracking-widest bp-text-dim">
-        <Icon className="h-3.5 w-3.5 text-[#00ffff]" strokeWidth={1.6} />
+        <Icon className="h-3.5 w-3.5 text-[#ffffff]" strokeWidth={1.6} />
         <span>{label}</span>
         <div className="h-px flex-1 bg-[rgba(255,255,255,0.15)]" />
         <span className="bp-text-faint">{items.length} ITEMS</span>
@@ -430,7 +430,7 @@ function StackRow({
         {items.map((it) => (
           <span
             key={it}
-            className="border border-[rgba(255,255,255,0.8)] bg-[rgba(0,255,255,0.06)] px-2 py-1 bp-font-mono text-[11px] tracking-wider bp-text-line transition-colors hover:border-[#00ffff] hover:text-[#00ffff]"
+            className="border border-[rgba(255,255,255,0.8)] bg-[rgba(255,255,255,0.06)] px-2 py-1 bp-font-mono text-[11px] tracking-wider bp-text-line transition-colors hover:border-[#ffffff] hover:text-[#ffffff]"
           >
             {it}
           </span>
@@ -457,7 +457,7 @@ function FocusBars() {
           </div>
           <div className="relative h-2 w-full border border-[rgba(255,255,255,0.25)] bg-[rgba(0,0,0,0.2)]">
             <div
-              className="h-full bg-[#00ffff]/70"
+              className="h-full bg-[#ffffff]/70"
               style={{ width: `${d.pct}%`, transition: "width 1.2s ease" }}
             />
             {/* tick marks */}
@@ -506,7 +506,7 @@ function ProjectCard({
       ref={ref}
       coords={`x:${(Number(p.no) - 1) * 240},y:000`}
       serial={`PRJ-${p.no}`}
-      className={`group flex flex-col p-5 transition-colors hover:border-[#00ffff] sm:p-6 ${
+      className={`group flex flex-col p-5 transition-colors hover:border-[#ffffff] sm:p-6 ${
         featured ? "md:col-span-2" : ""
       }`}
     >
@@ -559,7 +559,7 @@ function ProjectCard({
           href={p.href}
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-1.5 border border-[rgba(255,255,255,0.8)] px-2.5 py-1 bp-font-mono text-[10px] font-bold uppercase tracking-widest bp-text-line transition-colors hover:bg-[#00ffff] hover:text-[#003366]"
+          className="flex items-center gap-1.5 border border-[rgba(255,255,255,0.8)] px-2.5 py-1 bp-font-mono text-[10px] font-bold uppercase tracking-widest bp-text-line transition-colors hover:bg-[#ffffff] hover:text-[#0a0a0a]"
         >
           <Github className="h-3 w-3" strokeWidth={1.8} />
           <span>OPEN</span>
@@ -590,8 +590,8 @@ function Experience() {
         {EXPERIENCE.map((e) => (
           <BlueprintCard key={e.no} coords={e.coords} serial={e.no} className="p-5 sm:p-6">
             <div className="flex items-start gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-[rgba(255,255,255,0.8)] bg-[rgba(0,255,255,0.06)]">
-                <Briefcase className="h-5 w-5 text-[#00ffff]" strokeWidth={1.6} />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-[rgba(255,255,255,0.8)] bg-[rgba(255,255,255,0.06)]">
+                <Briefcase className="h-5 w-5 text-[#ffffff]" strokeWidth={1.6} />
               </div>
               <div className="min-w-0 flex-1">
                 <h3 className="bp-font-mono text-base font-bold uppercase tracking-wide bp-text-line">
@@ -625,9 +625,9 @@ function Experience() {
                 <span>NOW</span>
               </div>
               <div className="relative h-2 w-full border border-[rgba(255,255,255,0.25)] bg-[rgba(0,0,0,0.25)]">
-                <div className="h-full w-full bg-[#00ffff]/40" />
-                <span className="absolute left-0 top-1/2 h-3 w-3 -translate-y-1/2 border border-[#00ffff] bg-[#003366]" />
-                <span className="absolute right-0 top-1/2 h-3 w-3 -translate-y-1/2 border border-[#ff3333] bg-[#003366] bp-pulse-red" />
+                <div className="h-full w-full bg-[#ffffff]/40" />
+                <span className="absolute left-0 top-1/2 h-3 w-3 -translate-y-1/2 border border-[#ffffff] bg-[#0a0a0a]" />
+                <span className="absolute right-0 top-1/2 h-3 w-3 -translate-y-1/2 border border-[#ffffff] bg-[#0a0a0a] bp-pulse-red" />
               </div>
             </div>
           </BlueprintCard>
@@ -645,14 +645,14 @@ function Achievements() {
       <SectionTitle
         index="§ 04"
         title="Honors & Stamps"
-        subtitle="02 AWARDS · APPROVED WITH RED INK"
+        subtitle="02 AWARDS · STAMPED IN INK"
       />
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         {ACHIEVEMENTS.map((a) => (
           <BlueprintCard key={a.no} coords="x:000,y:000" serial={a.no} className="p-5 sm:p-6">
             <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center border-2 border-[#ff3333] bg-[#ff3333]/10 bp-pulse-red">
-                <Trophy className="h-6 w-6 text-[#ff3333]" strokeWidth={1.6} />
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center border-2 border-[#ffffff] bg-[#ffffff]/10 bp-pulse-red">
+                <Trophy className="h-6 w-6 text-[#ffffff]" strokeWidth={1.6} />
               </div>
               <div className="min-w-0 flex-1">
                 <h3 className="bp-font-mono text-base font-bold uppercase leading-tight tracking-wide bp-text-line sm:text-lg">
@@ -665,7 +665,7 @@ function Achievements() {
             </div>
             <div className="mt-5 flex items-center justify-between border-t border-[rgba(255,255,255,0.15)] pt-3">
               <span className="bp-font-mono text-[10px] tracking-widest bp-text-faint">
-                VERIFIED · REDLINE
+                VERIFIED · INKED
               </span>
               <TechnicalStamp label={a.stamp} accent="red" />
             </div>
@@ -686,7 +686,7 @@ function Contact() {
     setTimeout(() => setCopied(false), 1800);
   };
   return (
-    <footer id="contact" className="mt-auto border-t border-[rgba(255,255,255,0.8)] bg-[#002a52]">
+    <footer id="contact" className="mt-auto border-t border-[rgba(255,255,255,0.8)] bg-[#141414]">
       {/* dimension strip */}
       <div className="border-b border-[rgba(255,255,255,0.2)] bp-font-mono text-[10px] tracking-widest bp-text-faint">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-1">
@@ -748,7 +748,7 @@ function Contact() {
           <div className="lg:col-span-5">
             <div className="border border-[rgba(255,255,255,0.8)]">
               {/* banner */}
-              <div className="border-b border-[rgba(255,255,255,0.8)] bg-[rgba(0,255,255,0.08)] px-4 py-2 bp-font-mono text-[10px] font-bold tracking-widest bp-cyan">
+              <div className="border-b border-[rgba(255,255,255,0.8)] bg-[rgba(255,255,255,0.08)] px-4 py-2 bp-font-mono text-[10px] font-bold tracking-widest bp-cyan">
                 ◣ TITLE BLOCK · SHEET 01 OF 01
               </div>
               <table className="w-full bp-font-mono text-[10px] tracking-widest">
@@ -827,9 +827,9 @@ function ContactLink({
   copied?: boolean;
 }) {
   return (
-    <div className="group flex items-center gap-3 border border-[rgba(255,255,255,0.8)] p-2.5 transition-colors hover:border-[#00ffff] hover:bg-[rgba(0,255,255,0.06)]">
+    <div className="group flex items-center gap-3 border border-[rgba(255,255,255,0.8)] p-2.5 transition-colors hover:border-[#ffffff] hover:bg-[rgba(255,255,255,0.06)]">
       <div className="flex h-8 w-8 shrink-0 items-center justify-center border border-[rgba(255,255,255,0.25)]">
-        <Icon className="h-4 w-4 text-[#00ffff]" strokeWidth={1.6} />
+        <Icon className="h-4 w-4 text-[#ffffff]" strokeWidth={1.6} />
       </div>
       <div className="min-w-0 flex-1">
         <div className="bp-font-mono text-[9px] tracking-widest bp-text-faint">{label}</div>
@@ -837,7 +837,7 @@ function ContactLink({
           href={href}
           target={href.startsWith("http") ? "_blank" : undefined}
           rel={href.startsWith("http") ? "noreferrer" : undefined}
-          className="block truncate bp-font-mono text-[11px] tracking-wide bp-text-line group-hover:text-[#00ffff]"
+          className="block truncate bp-font-mono text-[11px] tracking-wide bp-text-line group-hover:text-[#ffffff]"
         >
           {value}
         </a>
@@ -845,7 +845,7 @@ function ContactLink({
       {onCopy && (
         <button
           onClick={onCopy}
-          className="border border-[rgba(255,255,255,0.4)] px-2 py-1 bp-font-mono text-[9px] tracking-widest bp-text-dim transition-colors hover:border-[#00ffff] hover:text-[#00ffff]"
+          className="border border-[rgba(255,255,255,0.4)] px-2 py-1 bp-font-mono text-[9px] tracking-widest bp-text-dim transition-colors hover:border-[#ffffff] hover:text-[#ffffff]"
         >
           {copied ? "COPIED ✓" : "COPY"}
         </button>
@@ -858,7 +858,7 @@ function ContactLink({
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex flex-col bg-[#003366] bp-grid-coarse">
+    <div className="relative min-h-screen flex flex-col bg-[#0a0a0a] bp-grid-coarse">
       <CursorTracker />
       <ScanLine />
       <Nav />
