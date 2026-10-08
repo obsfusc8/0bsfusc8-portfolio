@@ -3,6 +3,7 @@ import { Architects_Daughter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from '@vercel/analytics/react';
+import { SmoothScroll } from "@/components/SmoothScroll";
 
 const architectsDaughter = Architects_Daughter({
   variable: "--font-architects",
@@ -51,6 +52,7 @@ export default function RootLayout({
       <body
         className={`${architectsDaughter.variable} ${robotoMono.variable} antialiased`}
       >
+        <SmoothScroll />
         {children}
         <Toaster />
         <Analytics />
