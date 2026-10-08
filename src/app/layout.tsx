@@ -3,16 +3,6 @@ import { Architects_Daughter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from '@vercel/analytics/react';
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body>
-        {children}
-        <Analytics /> {/* <-- Add this line */}
-      </body>
-    </html>
-  );
-}
 
 const architectsDaughter = Architects_Daughter({
   variable: "--font-architects",
@@ -27,7 +17,7 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Md. Farhad Hossain Ovi — Blueprint Portfolio",
+  title: "Portfolio-ovi-aka-obsfusc8",
   description:
     "Architectural blueprint of Md. Farhad Hossain Ovi — Statistics undergrad at SUST, data storyteller, Arduino tinkerer, and builder of slightly ambitious things.",
   keywords: [
@@ -43,7 +33,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Md. Farhad Hossain Ovi" }],
   openGraph: {
-    title: "Md. Farhad Hossain Ovi — Blueprint Portfolio",
+    title: "Portfolio-ovi-aka-obsfusc8",
     description:
       "The master plan: a statistics undergrad who believes data tells stories.",
     siteName: "Farhad Hossain Ovi",
@@ -63,6 +53,7 @@ export default function RootLayout({
       >
         {children}
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );
